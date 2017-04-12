@@ -39,10 +39,14 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dal\EntregadorDAL.cs" />
+    <Compile Include="Dal\GarcomDAL.cs" />
+    <Compile Include="Dal\TipoItemCardapioDAL.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Entregador.cs" />
+    <Compile Include="Modelo\Garcom.cs" />
+    <Compile Include="Modelo\TipoItemCardapio.cs" />
     <Compile Include="Pages\Entregadores\EntregadoresListPage.xaml.cs">
       <DependentUpon>EntregadoresListPage.xaml</DependentUpon>
     </Compile>
@@ -52,11 +56,26 @@
     <Compile Include="Pages\Entregadores\EntregadoresPage.xaml.cs">
       <DependentUpon>EntregadoresPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Garcons\GarconsListPage.xaml.cs">
+      <DependentUpon>GarconsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Garcons\GarconsNewPage.xaml.cs">
+      <DependentUpon>GarconsNewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Garcons\GarconsPage.xaml.cs">
       <DependentUpon>GarconsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TiposItensCardapio\TiposItensCardapioListPage.xaml.cs">
+      <DependentUpon>TiposItensCardapioListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TiposItensCardapio\TiposItensCardapioNewPage.xaml.cs">
+      <DependentUpon>TiposItensCardapioNewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TiposItensCardapio\TiposItensCardapioPage.xaml.cs">
+      <DependentUpon>TiposItensCardapioPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -113,6 +132,36 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\Entregadores\EntregadoresNewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Garcons\GarconsListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Garcons\GarconsNewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\TiposItensCardapio\TiposItensCardapioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\TiposItensCardapio\TiposItensCardapioListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\TiposItensCardapio\TiposItensCardapioNewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

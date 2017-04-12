@@ -9,18 +9,20 @@ using System.Windows.Input;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Modulo1.Dal;
 
 namespace Modulo1.Pages.Garcons
 {
-        
-    public partial class GarconsPage : TabbedPage 
+
+    public partial class GarconsListPage : ContentPage
     {
-        public GarconsPage()
+        private GarcomDAL dalGarcom = GarcomDAL.GetInstance();
+
+        public GarconsListPage()
         {
             InitializeComponent();
-            ///BindingContext = new ContentPageViewModel();
+            lvGarcons.ItemsSource = dalGarcom.GetAll();
+
         }
     }
-
-    
 }

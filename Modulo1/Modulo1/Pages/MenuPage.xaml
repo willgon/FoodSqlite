@@ -12,7 +12,11 @@
        <Button Text="Entregadores"
                Image="icone_entregadores.png"
                Clicked="EntregadoresOnClicked"/>
-       
+        
+            <Button Text="Tipos de Itens"
+               Image="icone_tipositenscardapio.png"
+               Clicked="TiposItensCardapioOnClicked"/>
+
         </StackLayout>
   </ScrollView>
 </ContentPage>

@@ -11,6 +11,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Modulo1.Pages.Entregadores;
 using Modulo1.Pages.Garcons;
+using Modulo1.Pages.TiposItensCardapio;
 
 namespace Modulo1.Pages
 {
@@ -31,6 +32,11 @@ namespace Modulo1.Pages
         private async void EntregadoresOnClicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new EntregadoresPage());
+        }
+
+        private async void TiposItensCardapioOnClicked(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new TiposItensCardapioPage());
         }
     }
   
