@@ -32,7 +32,7 @@
               </Grid>
             </StackLayout>
           </Frame>
-          <Frame Grid.Row="1" Grid.Column="0" OutlineColor="Black" HasShdadow="True" Padding="5,5,5,5">
+          <Frame Grid.Row="1" Grid.Column="0" OutlineColor="Black" HasShadow="True" Padding="5,5,5,5">
             <StackLayout>
               <Grid>
                 <Grid.RowDefinitions>
@@ -71,7 +71,7 @@
                   <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                  <ColumnDefinitiion Width="100*"/>
+                  <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Row="0" Grid.Column="0" Text="Gravar" Clicked="BtnGravarClick"/>
               </Grid>
