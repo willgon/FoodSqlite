@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Modulo1.Pages.Entregadores.EntregadoresEditPage">
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout VerticalOptions="Center">
+        <Grid Padding="5,10,5,10">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+          </Grid.ColumnDefinitions>
+          <Frame Grid.Row="0" Grid.Column="0" OutlineColor="Black" BackgroundColor="Yellow" HasShadow="True" Padding="5,5,5,5">
+            <StackLayout>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="20*"/>
+                  <ColumnDefinition Width="60*"/>
+                  <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="icone_entregador.png" Grid.Row="0" Grid.Column="0"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Alterando Garçom" Font="24" TextColor="Blue" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text="{Binding Id}" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" Font="Bold, 24" TextColor="Blue" x:Name="identregador" VerticalOptions="Center"/>
+              </Grid>
+            </StackLayout>
+          </Frame>
+          <Frame Grid.Row="1" Grid.Column="0" OutlineColor="Black" HasShadow="True" Padding="5,5,5,5">
+            <StackLayout>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+                <Entry Placeholder="Nome do Entregador" PlaceholderColor="Gray" Grid.Row="0" Grid.Column="0" Text="{Binding Nome}" x:Name="nome"/>
+                <Entry Placeholder="Telefone do Entregador" PlaceholderColor="Gray" Grid.Row="1" Text="{Binding Telefone}" Grid.Column="0" x:Name="telefone" Keyboard="Telephone"/>
+              </Grid>
+            </StackLayout>
+          </Frame>
+          <Frame Grid.Row="3" Grid.Column="0" OutlineColor="Black" HasShadow="True" Padding="0">
+            <StackLayout>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Text="Gravar" Clicked="BtnGravarClick"/>
+              </Grid>
+            </StackLayout>
+          </Frame>
+        </Grid>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+ 
+</ContentPage>

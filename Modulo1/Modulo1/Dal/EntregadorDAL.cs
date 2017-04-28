@@ -13,13 +13,13 @@ namespace Modulo1.Dal
         private ObservableCollection<Entregador> Entregadores = new ObservableCollection<Entregador>();
         private static EntregadorDAL EntregadorInstance = new EntregadorDAL();
 
-        private EntregadorDAL ()
+        private EntregadorDAL()
         {
             Entregadores.Add(new Entregador()
             {
-                Id=1,
+                Id = 1,
                 Nome = "Brauzio",
-                Telefone ="Asdrugio"
+                Telefone = "Asdrugio"
             });
 
             Entregadores.Add(new Entregador()
@@ -91,7 +91,7 @@ namespace Modulo1.Dal
             return EntregadorInstance;
         }
 
-        public ObservableCollection <Entregador> GetAll()
+        public ObservableCollection<Entregador> GetAll()
         {
             return Entregadores;
         }
@@ -99,6 +99,14 @@ namespace Modulo1.Dal
         public void Add(Entregador entregador)
         {
             this.Entregadores.Add(entregador);
+        }
+        public void Remove(Entregador entregador)
+        {
+            this.Entregadores.Remove(entregador);
+        }
+        public void Update(Entregador entregador)
+        {
+            this.Entregadores[this.Entregadores.IndexOf(entregador)] = entregador;
         }
     }
 }

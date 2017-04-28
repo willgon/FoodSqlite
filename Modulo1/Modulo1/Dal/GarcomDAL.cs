@@ -20,70 +20,70 @@ namespace Modulo1.Dal
             {
                 Id = 1,
                 Nome = "Brauzio",
-                
+
             });
 
             Garcons.Add(new Garcom()
             {
                 Id = 2,
                 Nome = "Entencius",
-                
+
             });
 
             Garcons.Add(new Garcom()
             {
                 Id = 3,
                 Nome = "Cartucious",
-               
+
             });
 
             Garcons.Add(new Garcom()
             {
                 Id = 4,
                 Nome = "Adoliterio",
-                
+
             });
 
             Garcons.Add(new Garcom()
             {
                 Id = 5,
                 Nome = "Castrogildo",
-                
+
             });
 
             Garcons.Add(new Garcom()
             {
                 Id = 6,
                 Nome = "Asdrugio",
-                
+
             });
 
             Garcons.Add(new Garcom()
             {
                 Id = 7,
                 Nome = "Gesfredio",
-               
+
             });
 
             Garcons.Add(new Garcom()
             {
                 Id = 8,
                 Nome = "Gesfrundio",
-               
+
             });
 
             Garcons.Add(new Garcom()
             {
                 Id = 9,
                 Nome = "Kentencio",
-               
+
             });
 
             Garcons.Add(new Garcom()
             {
                 Id = 10,
                 Nome = "Gesifrelio",
-              
+
             });
         }
 
@@ -101,6 +101,15 @@ namespace Modulo1.Dal
         {
             this.Garcons.Add(garcom);
         }
+        public void Remove(Garcom garcom)
+        {
+            this.Garcons.Remove(garcom);
+        }
+        public void Update(Garcom garcom)
+        {
+            this.Garcons[this.Garcons.IndexOf(garcom)] = garcom;
+        }
     }
 }
+
 

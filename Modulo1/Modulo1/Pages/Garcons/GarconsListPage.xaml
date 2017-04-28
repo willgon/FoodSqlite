@@ -2,20 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Modulo1.Pages.Garcons.GarconsListPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Garcons" VerticalOptions="Center" Font="25" HorizontalOptions="Center"/>
-            <ListView x:Name="lvGarcons" RowHeight="70">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="5,0" Orientation="Vertical">
-                                <Label Text="{Binding Nome}" TextColor="Blue" FontSize="Large"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+  <ContentPage.Content>
+    <StackLayout>
+      <Label Text="Garcons" VerticalOptions="Center" Font="25" HorizontalOptions="Center"/>
+      <ListView x:Name="lvGarcons" RowHeight="70">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.ContextActions>
+                <MenuItem Clicked="OnAlterarClick" CommandParameter="{Binding}" Text="Alterar"/>
+                <MenuItem Clicked="OnRemoverClick" CommandParameter="{Binding}" Text="Remover" IsDestructive="True"/>
+              </ViewCell.ContextActions>
+              <StackLayout Padding="5,0" Orientation="Vertical">
+                <Label Text="{Binding Nome}" TextColor="Blue" FontSize="Large"/>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>

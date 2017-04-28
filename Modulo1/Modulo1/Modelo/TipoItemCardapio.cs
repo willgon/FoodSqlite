@@ -1,15 +1,31 @@
-﻿using System;
+﻿using SQLite.Net.Attributes;
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Modulo1.Modelo
 {
     public class TipoItemCardapio
     {
-        public long Id { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public long? TipoItemCardapioId { get; set; }
         public string Nome { get; set; }
-        public string CaminhoArquivoFoto { get; set; }
+        public byte[] Foto { get; set; }
+
+        
+        public override bool Equals(object obj)
+        {
+            TipoItemCardapio tipoItemCardapio = obj as TipoItemCardapio;
+            if (tipoItemCardapio == null)
+            {
+                return false;
+            }
+
+            return (TipoItemCardapioId.Equals(tipoItemCardapio.TipoItemCardapioId));
+        }
+
+        public override int GetHashCode()
+        {
+            return TipoItemCardapioId.GetHashCode();
+        }
     }
 }

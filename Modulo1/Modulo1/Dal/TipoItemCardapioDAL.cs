@@ -6,71 +6,47 @@ using System.Threading.Tasks;
 
 using Modulo1.Modelo;
 using System.Collections.ObjectModel;
+using Modulo1.Infraestructure;
+
+using SQLite.Net;
+
+using Xamarin.Forms;
 
 namespace Modulo1.Dal
 {
     public class TipoItemCardapioDAL
     {
-        
-        private ObservableCollection<TipoItemCardapio> TiposItensCardapio = new ObservableCollection<TipoItemCardapio>();
-        private static TipoItemCardapioDAL TipoItemCardapioInstance = new TipoItemCardapioDAL();
+        private SQLiteConnection sqlConnection;
 
-        private TipoItemCardapioDAL()
+        public TipoItemCardapioDAL()
         {
-            TiposItensCardapio.Add(new TipoItemCardapio()
-            {
-                Id = 1, Nome="Pizza", CaminhoArquivoFoto="pizzas.png"
-            });
-
-            TiposItensCardapio.Add(new TipoItemCardapio()
-            {
-                Id = 2,
-                Nome = "Bebidas",
-                CaminhoArquivoFoto = "bebidas.png"
-            });
-
-            TiposItensCardapio.Add(new TipoItemCardapio()
-            {
-                Id = 3,
-                Nome = "Saladas",
-                CaminhoArquivoFoto = "saladas.png"
-            });
-
-            TiposItensCardapio.Add(new TipoItemCardapio()
-            {
-                Id = 4,
-                Nome = "Sanduíches",
-                CaminhoArquivoFoto = "sanduiches.png"
-            });
-
-            TiposItensCardapio.Add(new TipoItemCardapio()
-            {
-                Id = 5,
-                Nome = "Sobremesas",
-                CaminhoArquivoFoto = "sobremesas.png"
-            });
-
-            TiposItensCardapio.Add(new TipoItemCardapio()
-            {
-                Id = 6,
-                Nome = "Carnes",
-                CaminhoArquivoFoto = "carnes.png"
-            });
-
+            this.sqlConnection = DependencyService.Get<IDatabaseConnection>().DbConnection();
+            this.sqlConnection.CreateTable<TipoItemCardapio>();
         }
 
-        public static TipoItemCardapioDAL GetInstance()
+        public IEnumerable<TipoItemCardapio> GetAll()
         {
-            return TipoItemCardapioInstance;
+            return (from t in sqlConnection.Table<TipoItemCardapio>() select t).OrderBy(i => i.Nome).ToList();
         }
+               
+        public TipoItemCardapio GetItemById(long id)
+        {
+            return sqlConnection.Table<TipoItemCardapio>().FirstOrDefault(t => t.TipoItemCardapioId == id);
+        }
+
+        public void DeleteById(long id)
+        {
+            sqlConnection.Delete<TipoItemCardapio>(id);
+        }
+
         public void Add(TipoItemCardapio tipoItemCardapio)
         {
-            this.TiposItensCardapio.Add(tipoItemCardapio);
+            sqlConnection.Insert(tipoItemCardapio);
         }
-        public ObservableCollection<TipoItemCardapio> GetAll()
+
+        public void Update(TipoItemCardapio tipoItemCardapio)
         {
-            return TiposItensCardapio;
+            sqlConnection.Update(tipoItemCardapio);
         }
-        
     }
 }
